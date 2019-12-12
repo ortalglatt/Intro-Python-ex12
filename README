@@ -1,0 +1,94 @@
+yair.shemer, ortal.netzer
+204371983, 312416845
+Yair Shemer, Ortal Glatt
+
+=============================
+=  README    for    ex12:    =
+=============================
+
+==================
+=  Description:  =
+==================
+Creating a complete Four In A Row game including GUI.
+We decided to create a Board class to manage the board moves and some of the
+checks and use it in the game class.
+
+The AI is based on pure luck and has nothing smart in it. Nevertheless it's
+luck is surprisingly good.
+
+======================
+=  Special Comments  =
+======================
+class Board:
+this class was mainly made to have a full control over the board.
+main methods are:
+add_disk
+The method adds a disk to the board and updates all necessary fields.
+
+check_win
+This method checks a general win over the board. The principal is stopping
+further actions played on board after it returns a winner.
+
+__color_won
+This method is used only in the class and it's goal is to determine which
+one of the players won, and keep the coordinates and update it in the field,
+so later on we can mark those winning coordinates.
+
+
+class Game
+This class is basically created as requested without special methods added.
+The only special field is using a dictionary of players, counting their moves,
+and making sure no one is playing on other one's turn.
+
+
+class AI
+as said before, has the minimum so that the computer can play.
+It randoms the column to play from a list of possible columns.
+
+
+class App
+This class controls the GUI
+It has main frames, canvases as fields and also has few fields that we had
+to keep through the program:
+after_id:
+keeps the id of the next after function in order to stop it when needed.
+ai_players:
+A dictionary that describes which one of the players is AI.
+
+entrance_frame:
+A function that is responsible for loading the entrance features to display
+including loading photos and editing buttons, frames and so on.
+
+change_to_gamescreen:
+verifying the game option that the user chose and opening the game.
+
+game_frame:
+This function, accept from loading more features, is responsible for taking
+the first play of any of the players, according to the user's choice.
+
+play_again:
+This function is for the command for the button "main menu"
+
+move_cursor:
+Uses the command <Motion> to make gestures on screen according to user's moves.
+
+put_disc:
+Uses the event to know which column the user clicked, and puts the disk there
+
+put_disc_in_col:
+This function gets a column from put_disc and ai_turn and makes the actual
+move on board, including updating necessary fields.
+
+ai_turn:
+given the player's number, the function makes the move for the AI
+
+check_win:
+This function checks if someone won and takes the right actions when happens,
+including marking the winning ovals, and displaying a message.
+
+trans_window:
+Creates a transit window so the user can chose what he wants to do after a
+game has been over.
+
+press_X:
+Taking care of what happens if user clicked X of the window.
